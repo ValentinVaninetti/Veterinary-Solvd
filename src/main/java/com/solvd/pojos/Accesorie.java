@@ -6,8 +6,7 @@ public class Accesorie {
     private String type;
     private int stock;
 
-    public Accesorie(Long id, String name, String type, int stock) {
-        this.id = id;
+    public Accesorie(String name, String type, int stock) {
         this.name = name;
         this.type = type;
         this.stock = stock;
