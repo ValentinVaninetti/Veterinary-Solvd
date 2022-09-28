@@ -13,9 +13,11 @@ import java.util.List;
 public class VeterinaryDaoImpl implements IVeterinaryDao {
     PreparedStatement statement;
     Connection connection;
-    public VeterinaryDaoImpl(){
+
+    public VeterinaryDaoImpl() {
         SingletonDatabaseConnection.getInstance();
     }
+
     /**
      * @param veterinary
      * @throws SQLException
@@ -64,7 +66,7 @@ public class VeterinaryDaoImpl implements IVeterinaryDao {
      * @return
      */
     @Override
-    public Veterinary getById(Veterinary id) {
+    public Veterinary getById(Integer id) {
         return null;
     }
 }

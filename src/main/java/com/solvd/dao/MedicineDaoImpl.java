@@ -64,7 +64,7 @@ public class MedicineDaoImpl implements IMedicineDao {
      * @return
      */
     @Override
-    public Medicine getById(Medicine id) {
+    public Medicine getById(Integer id) {
         return null;
     }
 }

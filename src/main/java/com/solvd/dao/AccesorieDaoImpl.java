@@ -11,11 +11,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-public class AccesorieDaoImpl  implements IAccesorieDao {
+
+public class AccesorieDaoImpl implements IAccesorieDao {
 
     PreparedStatement statement;
     Connection connection;
-    public AccesorieDaoImpl(){
+    ResultSet rs;
+
+    public AccesorieDaoImpl() {
         SingletonDatabaseConnection.getInstance();
     }
 
@@ -24,8 +27,7 @@ public class AccesorieDaoImpl  implements IAccesorieDao {
      */
     @Override
     public void insert(Accesorie accesorie) throws SQLException {
-        this.connection = SingletonDatabaseConnection.getConnection();
-        this.statement = this.connection.prepareStatement(Querys.INSERTACCESORIE);
+        prepareQuery(Querys.INSERTACCESORIE);
         insertAccesorie(accesorie);
         this.statement.executeUpdate();
         this.connection.close();
@@ -43,12 +45,11 @@ public class AccesorieDaoImpl  implements IAccesorieDao {
      */
     @Override
     public void update(Accesorie accesorie) throws SQLException {
-        this.connection = SingletonDatabaseConnection.getConnection();
-        this.statement = this.connection.prepareStatement(Querys.UPDATEACCESORIE);
+        prepareQuery(Querys.UPDATEACCESORIE);
         this.statement.setString(TableColumn.ACCESORIENAME.index, accesorie.getName());
         this.statement.setString(TableColumn.ACCESORIETYPE.index, accesorie.getType());
         this.statement.setInt(TableColumn.ACCESORIESTOCK.index, accesorie.getStock());
-        this.statement.setLong(4, accesorie.getId());
+        this.statement.setInt(4, accesorie.getId());
         this.statement.executeUpdate();
         this.connection.close();
     }
@@ -58,28 +59,28 @@ public class AccesorieDaoImpl  implements IAccesorieDao {
      */
     @Override
     public void delete(Accesorie accesorie) throws SQLException {
-        this.connection = SingletonDatabaseConnection.getConnection();
-        this.statement = this.connection.prepareStatement(Querys.DELETEACCESORIE);
+        prepareQuery(Querys.DELETEACCESORIE);
         this.statement.setLong(1, accesorie.getId());
     }
+
     @Override
     public List<Accesorie> getAll() throws SQLException {
-    List <Accesorie> accesories = new ArrayList<>();
-        PreparedStatement statement =  null;
-        ResultSet rs;
+        List<Accesorie> accesories = new ArrayList<>();
+        PreparedStatement statement = null;
         SingletonDatabaseConnection.getInstance();
         Connection s = SingletonDatabaseConnection.getConnection();
         statement = s.prepareStatement(Querys.GETALLACCESORIES);
-        rs = statement.executeQuery();
-        while(rs.next()){
+        this.rs = statement.executeQuery();
+        while (rs.next()) {
             accesories.add(getAccesorie(rs));
         }
-       return accesories;
+        return accesories;
 
     }
-    private Accesorie getAccesorie (ResultSet rs) throws SQLException {
-        Accesorie ac =  new Accesorie();
-        ac.setId(rs.getLong("id_accesorie"));
+
+    private Accesorie getAccesorie(ResultSet rs) throws SQLException {
+        Accesorie ac = new Accesorie();
+        ac.setId(rs.getInt("id_accesorie"));
         ac.setName(rs.getString("accesorieName"));
         ac.setType(rs.getString("accesorieType"));
         ac.setStock(rs.getInt("accesorieStock"));
@@ -91,7 +92,16 @@ public class AccesorieDaoImpl  implements IAccesorieDao {
      * @return
      */
     @Override
-    public Accesorie getById(Accesorie id) {
-        return null;
+    public Accesorie getById(Integer id) throws SQLException {
+        prepareQuery(Querys.GETACCESORIEBYID);
+        this.statement.setInt(TableColumn.ACCESORIEID.index, id);
+        this.rs = this.statement.executeQuery();
+        this.rs.next();
+        return getAccesorie(this.rs);
+    }
+
+    private void prepareQuery(String query) throws SQLException {
+        this.connection = SingletonDatabaseConnection.getConnection();
+        this.statement = this.connection.prepareStatement(query);
     }
 }

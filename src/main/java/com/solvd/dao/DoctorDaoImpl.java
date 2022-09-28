@@ -13,9 +13,11 @@ import java.util.List;
 public class DoctorDaoImpl implements IDoctorDao {
     PreparedStatement statement;
     Connection connection;
-    public DoctorDaoImpl(){
+
+    public DoctorDaoImpl() {
         SingletonDatabaseConnection.getInstance();
     }
+
     /**
      * @param doctor
      * @throws SQLException
@@ -64,7 +66,7 @@ public class DoctorDaoImpl implements IDoctorDao {
      * @return
      */
     @Override
-    public Doctor getById(Doctor id) {
+    public Doctor getById(Integer id) {
         return null;
     }
 }

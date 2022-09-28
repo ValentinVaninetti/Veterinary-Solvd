@@ -8,5 +8,5 @@ public interface IDao <K, I>{
     void update(K k) throws SQLException;
     void delete(K k) throws SQLException;
     List <K> getAll() throws SQLException;
-    K getById(K id);
+    K getById(Integer id) throws SQLException;
 }

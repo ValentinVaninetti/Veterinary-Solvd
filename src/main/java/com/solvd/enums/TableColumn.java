@@ -3,6 +3,7 @@ package com.solvd.enums;
 public enum TableColumn {
 
     /** Accesorie **/
+    ACCESORIEID(1),
     ACCESORIENAME(1),
     ACCESORIETYPE(2),
     ACCESORIESTOCK(3),

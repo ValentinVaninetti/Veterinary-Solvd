@@ -2,5 +2,5 @@ package com.solvd.dao;
 
 import com.solvd.pojos.Pet;
 
-public interface IPetDao extends IDao <Pet, Long>{
+public interface IPetDao extends IDao <Pet, Integer>{
 }

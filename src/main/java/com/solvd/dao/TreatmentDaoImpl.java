@@ -68,7 +68,7 @@ public class TreatmentDaoImpl implements ITreatmentDao {
      * @return
      */
     @Override
-    public Treatment getById(Treatment id) {
+    public Treatment getById(Integer id) {
         return null;
     }
 }

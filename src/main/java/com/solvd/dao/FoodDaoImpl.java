@@ -13,9 +13,11 @@ import java.util.List;
 public class FoodDaoImpl implements IFoodDao {
     PreparedStatement statement;
     Connection connection;
-    public FoodDaoImpl(){
+
+    public FoodDaoImpl() {
         SingletonDatabaseConnection.getInstance();
     }
+
     /**
      * @param food
      * @throws SQLException
@@ -66,7 +68,7 @@ public class FoodDaoImpl implements IFoodDao {
      * @return
      */
     @Override
-    public Food getById(Food id) {
+    public Food getById(Integer id) {
         return null;
     }
 }

@@ -65,7 +65,7 @@ public class EquipmentDaoImpl implements IEquipmentDao {
      * @return
      */
     @Override
-    public Equipment getById(Equipment id) {
+    public Equipment getById(Integer id) {
         return null;
     }
 }

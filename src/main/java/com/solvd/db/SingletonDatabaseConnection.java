@@ -1,7 +1,9 @@
 package com.solvd.db;
+
 import com.solvd.utils.CommonUtils;
 import com.solvd.utils.Constants;
 import org.apache.commons.dbcp.BasicDataSource;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -21,6 +23,7 @@ public class SingletonDatabaseConnection {
             throw new RuntimeException(e);
         }
     }
+
     public static SingletonDatabaseConnection getInstance() {
         if (singletonInstance == null) {
             singletonInstance = new SingletonDatabaseConnection();
@@ -31,6 +34,7 @@ public class SingletonDatabaseConnection {
         return singletonInstance;
 
     }
+
     public static Connection getConnection() throws SQLException {
         return dataSource.getConnection();
     }

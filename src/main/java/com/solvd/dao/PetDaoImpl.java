@@ -66,7 +66,7 @@ public class PetDaoImpl implements IPetDao {
      * @return
      */
     @Override
-    public Pet getById(Pet id) {
+    public Pet getById(Integer id) {
         return null;
     }
 }

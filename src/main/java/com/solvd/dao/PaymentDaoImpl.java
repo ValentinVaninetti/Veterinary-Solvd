@@ -67,7 +67,7 @@ public class PaymentDaoImpl implements IPaymentDao {
      * @return
      */
     @Override
-    public Payment getById(Payment id) {
+    public Payment getById(Integer id) {
         return null;
     }
 }

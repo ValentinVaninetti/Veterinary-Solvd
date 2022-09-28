@@ -1,12 +1,20 @@
 package com.solvd.pojos;
 
 public class Accesorie {
-    private Long id;
+    private int id;
     private String name;
     private String type;
     private int stock;
 
     public Accesorie(String name, String type, int stock) {
+
+        this.name = name;
+        this.type = type;
+        this.stock = stock;
+    }
+
+    public Accesorie(int id, String name, String type, int stock) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.stock = stock;
@@ -16,11 +24,11 @@ public class Accesorie {
 
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -46,5 +54,15 @@ public class Accesorie {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Accesorie{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", stock=" + stock +
+                '}';
     }
 }

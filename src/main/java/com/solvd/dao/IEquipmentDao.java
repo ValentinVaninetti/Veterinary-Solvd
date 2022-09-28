@@ -2,5 +2,5 @@ package com.solvd.dao;
 
 import com.solvd.pojos.Equipment;
 
-public interface IEquipmentDao extends IDao <Equipment, Long> {
+public interface IEquipmentDao extends IDao <Equipment, Integer> {
 }

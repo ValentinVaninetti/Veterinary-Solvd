@@ -14,21 +14,24 @@ import java.util.List;
 public class ClientDaoImpl implements IClientDao {
     PreparedStatement statement;
     Connection connection;
-    public ClientDaoImpl(){
+
+    public ClientDaoImpl() {
         SingletonDatabaseConnection.getInstance();
     }
+
     /**
      * @param client
      * @throws SQLException
      */
     @Override
     public void insert(Client client) throws SQLException {
-    this.connection = SingletonDatabaseConnection.getConnection();
-    this.statement = connection.prepareStatement(Querys.INSERTCLIENT);
-    insertClient(client);
-    statement.executeUpdate();
+        this.connection = SingletonDatabaseConnection.getConnection();
+        this.statement = connection.prepareStatement(Querys.INSERTCLIENT);
+        insertClient(client);
+        statement.executeUpdate();
 
     }
+
     private void insertClient(Client client) throws SQLException {
         this.statement.setString(TableColumn.CLIENTNAME.index, client.getName());
         this.statement.setInt(TableColumn.CLIENTAGE.index, client.getAge());
@@ -65,7 +68,7 @@ public class ClientDaoImpl implements IClientDao {
      * @return
      */
     @Override
-    public Client getById(Client id) {
+    public Client getById(Integer id) {
         return null;
     }
 }
