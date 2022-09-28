@@ -12,6 +12,9 @@ public class Client {
         this.age = age;
         this.petName = petName;
     }
+    public Client(){
+
+    }
 
     public int getId() {
         return id;

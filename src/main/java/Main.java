@@ -1,6 +1,5 @@
 import com.solvd.db.SingletonDatabaseConnection;
-import com.solvd.dao.AccesorieDaoImpl;
-import com.solvd.pojos.Accesorie;
+import com.solvd.dao.AccesoryDaoImpl;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,7 +12,7 @@ public class Main {
         System.out.println(s);
         Connection d = SingletonDatabaseConnection.getConnection();
         System.out.println(d);
-        AccesorieDaoImpl a = new AccesorieDaoImpl();
+        AccesoryDaoImpl a = new AccesoryDaoImpl();
         System.out.println(a.getById(5).toString());
         System.out.println(a.getById(6).toString());
         System.out.println(a.getById(7).toString());

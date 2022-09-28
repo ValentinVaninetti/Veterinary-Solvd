@@ -2,13 +2,13 @@ package com.solvd.utils;
 
 public class Querys {
     /**
-     * Accesorie
+     * Accesory
      **/
-    public static final String INSERTACCESORIE = "INSERT INTO accesorie (accesorieName , accesorieType , accesorieStock) VALUES (?,?,?)";
-    public static final String UPDATEACCESORIE = "UPDATE accesorie SET accesorieName = ?, accesorieType = ?, accesorieStock = ? WHERE id_accesorie = ?";
-    public static final String DELETEACCESORIE = "DELETE FROM accesorie WHERE id_accesorie = ?";
-    public static final String GETALLACCESORIES = "SELECT * FROM accesorie";
-    public static final String GETACCESORIEBYID = "SELECT * FROM accesorie WHERE id_accesorie = ?";
+    public static final String INSERTACCESORY = "INSERT INTO accesorie (accesorieName , accesorieType , accesorieStock) VALUES (?,?,?)";
+    public static final String UPDATEACCESORY = "UPDATE accesorie SET accesorieName = ?, accesorieType = ?, accesorieStock = ? WHERE id_accesorie = ?";
+    public static final String DELETEACCESORY = "DELETE FROM accesorie WHERE id_accesorie = ?";
+    public static final String GETALLACCESORY = "SELECT * FROM accesorie";
+    public static final String GETACCESORYBYID = "SELECT * FROM accesorie WHERE id_accesorie = ?";
 
     /**
      * Client
