@@ -1,16 +1,25 @@
 package com.solvd.pojos;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.util.Date;
+@JsonRootName(value = "Equipment")
 public class Equipment {
+    @JsonProperty
     private int id;
+    @JsonProperty
     private String type;
+    @JsonProperty
     private Date usageDate;
 
     public Equipment(int id, String type, Date usageDate) {
         this.id = id;
         this.type = type;
         this.usageDate = usageDate;
+    }
+    public Equipment(){
+
     }
 
     public int getId() {
@@ -35,5 +44,14 @@ public class Equipment {
 
     public void setUsageDate(Date usageDate) {
         this.usageDate = usageDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipment{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", usageDate=" + usageDate +
+                '}';
     }
 }

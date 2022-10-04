@@ -1,0 +1,17 @@
+{
+  "ArrayList" : [ {
+    "id" : 1,
+    "name" : "doc",
+    "age" : 32,
+    "experience" : 5
+  }, {
+    "id" : 2,
+    "name" : "doc2",
+    "age" : 45,
+    "experience" : 3
+  }, {
+    "id" : 1,
+    "type" : "xRay-Machine",
+    "usageDate" : 1664924310634
+  } ]
+}

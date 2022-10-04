@@ -1,5 +1,8 @@
 package com.solvd.pojos;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+
+@JsonRootName(value = "Doctor")
 public class Doctor {
     private int id;
     private String name;
@@ -11,6 +14,9 @@ public class Doctor {
         this.name = name;
         this.age = age;
         this.experience = experience;
+    }
+    public Doctor() {
+
     }
 
     public int getId() {

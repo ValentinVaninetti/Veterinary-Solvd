@@ -1,5 +1,9 @@
 package com.solvd.pojos;
+import jakarta.xml.bind.annotation.*;
 
+
+@XmlRootElement(name = "client")
+@XmlType(propOrder = {"id", "name", "age","petName"})
 public class Client {
     private int id;
     private String name;
@@ -15,7 +19,7 @@ public class Client {
     public Client(){
 
     }
-
+    @XmlAttribute
     public int getId() {
         return id;
     }
@@ -24,6 +28,7 @@ public class Client {
         this.id = id;
     }
 
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -32,6 +37,7 @@ public class Client {
         this.name = name;
     }
 
+    @XmlElement
     public int getAge() {
         return age;
     }
@@ -40,11 +46,22 @@ public class Client {
         this.age = age;
     }
 
+    @XmlElement
     public String getPetName() {
         return petName;
     }
 
     public void setPetName(String petName) {
         this.petName = petName;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", petName='" + petName + '\'' +
+                '}';
     }
 }

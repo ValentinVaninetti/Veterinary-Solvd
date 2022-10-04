@@ -4,11 +4,11 @@ public class Querys {
     /**
      * Accesory
      **/
-    public static final String INSERTACCESORY = "INSERT INTO accesorie (accesorieName , accesorieType , accesorieStock) VALUES (?,?,?)";
-    public static final String UPDATEACCESORY = "UPDATE accesorie SET accesorieName = ?, accesorieType = ?, accesorieStock = ? WHERE id_accesorie = ?";
-    public static final String DELETEACCESORY = "DELETE FROM accesorie WHERE id_accesorie = ?";
-    public static final String GETALLACCESORY = "SELECT * FROM accesorie";
-    public static final String GETACCESORYBYID = "SELECT * FROM accesorie WHERE id_accesorie = ?";
+    public static final String INSERTACCESORY = "INSERT INTO accesory (accesorieName , accesorieType , accesorieStock) VALUES (?,?,?)";
+    public static final String UPDATEACCESORY = "UPDATE accesory SET accesorieName = ?, accesorieType = ?, accesorieStock = ? WHERE id_accesorie = ?";
+    public static final String DELETEACCESORY = "DELETE FROM accesory WHERE id_accesorie = ?";
+    public static final String GETALLACCESORY = "SELECT * FROM accesory";
+    public static final String GETACCESORYBYID = "SELECT * FROM accesory WHERE id_accesorie = ?";
 
     /**
      * Client
